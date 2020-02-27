@@ -30,6 +30,12 @@ namespace QR_Code_generator
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Przesuwanie Okien PART 3  
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         #endregion
 
         private void btnGenerate_Click(object sender, EventArgs e)
@@ -69,11 +75,13 @@ namespace QR_Code_generator
             dlg.DefaultExt = "jpeg";
             dlg.AddExtension = true;
             dlg.Filter = "Data Files (*.jpeg)|*.jpeg";
-            dlg.FileName = textBox1.Text;        
+            dlg.FileName = "Your_QR_Code";       
             dlg.ShowDialog();
             string path = dlg.FileName;
 
             pictureBox1.Image.Save(path, ImageFormat.Jpeg);
         }
+
+       
     }
 }
