@@ -18,6 +18,7 @@ namespace QR_Code_generator
         public Form1()
         {
             InitializeComponent();
+
         }
         #region
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -38,10 +39,61 @@ namespace QR_Code_generator
         }
         #endregion
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            SaveFile();
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             Generate();
         }
+
+        private void bunifuFlatButton1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Generate();
+            }
+        }
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Generate();
+            }
+        }
+
+
+        private void textBox1_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveFile()
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.DefaultExt = "jpeg";
+            dlg.AddExtension = true;
+            dlg.Filter = "Data Files (*.jpeg)|*.jpeg";
+            dlg.FileName = "Your_QR_Code";
+            dlg.ShowDialog();
+            string path = dlg.FileName;
+
+            pictureBox1.Image.Save(path, ImageFormat.Jpeg);
+        }
+
+
         private void Generate()
         {
             QRCodeGenerator codeGenerator = new QRCodeGenerator();
@@ -51,37 +103,9 @@ namespace QR_Code_generator
             pictureBox1.Image = code.GetGraphic(150);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Application.Exit();
+            System.Diagnostics.Process.Start("https://www.dlewandowski.pl");
         }
-
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Generate();
-            }
-        }
-
-        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.DefaultExt = "jpeg";
-            dlg.AddExtension = true;
-            dlg.Filter = "Data Files (*.jpeg)|*.jpeg";
-            dlg.FileName = "Your_QR_Code";       
-            dlg.ShowDialog();
-            string path = dlg.FileName;
-
-            pictureBox1.Image.Save(path, ImageFormat.Jpeg);
-        }
-
-       
     }
 }
