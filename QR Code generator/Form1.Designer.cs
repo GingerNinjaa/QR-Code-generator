@@ -93,7 +93,7 @@ namespace QR_Code_generator
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(81)))), ((int)(((byte)(196)))));
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(89)))), ((int)(((byte)(207)))));
             this.textBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -101,9 +101,9 @@ namespace QR_Code_generator
             this.textBox1.HintForeColor = System.Drawing.Color.Empty;
             this.textBox1.HintText = "";
             this.textBox1.isPassword = false;
-            this.textBox1.LineFocusedColor = System.Drawing.Color.BlueViolet;
+            this.textBox1.LineFocusedColor = System.Drawing.Color.MediumBlue;
             this.textBox1.LineIdleColor = System.Drawing.SystemColors.Highlight;
-            this.textBox1.LineMouseHoverColor = System.Drawing.Color.BlueViolet;
+            this.textBox1.LineMouseHoverColor = System.Drawing.Color.MediumBlue;
             this.textBox1.LineThickness = 4;
             this.textBox1.Location = new System.Drawing.Point(18, 471);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);

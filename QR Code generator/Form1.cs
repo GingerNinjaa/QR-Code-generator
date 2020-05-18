@@ -108,4 +108,6 @@ namespace QR_Code_generator
             System.Diagnostics.Process.Start("https://www.dlewandowski.pl");
         }
     }
+
+    
 }
